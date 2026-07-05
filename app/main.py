@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from app.routes.system import router as system_router
 from app.routes.health import router as health_router
+from app.routes.ai import router as ai_router
 
 app = FastAPI(
     title="AI Homelab Assistant",
@@ -10,6 +11,7 @@ app = FastAPI(
 
 app.include_router(system_router)
 app.include_router(health_router)
+app.include_router(ai_router)
 
 @app.get("/")
 def home():
